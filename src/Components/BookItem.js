@@ -1,15 +1,34 @@
 import React from 'react'
+import './BookItem.css'
+import {connect } from 'react-redux'
 
-const BookItem = ({book}) => {
 
+
+const BookItem = ({book, bookCart, dispatch}) => {
+
+    const toggleBookCart = ()=> {
+        const action = {type: 'TOGGLE_CART', value: book} 
+        dispatch(action)
+    }
+    
     return (
-     <div>
-         <img src={book.cover} alt='couverture du livre'/>
+     <div className='book-item-container'>
+         <img className='book-picture' src={book.cover} alt='couverture du livre'/>
          <div> 
-             <h3> {book.title}</h3>
-             <p> {book.synopsis.join(<br />)}</p>
+             <div className='book-item-title'> {book.title}</div>
+             <div className='book-item-synopsis'> {`${book.synopsis.join('\n')}`} 
+            </div>
+            <div>{`${book.price} €`}</div>
+            <button onClick={()=> toggleBookCart()}>
+                {bookCart.findIndex(item=>item.isbn === book.isbn) === -1 ?
+                 'Ajouter au panier': 
+                 'Retirer du panier'}
+            </button>
          </div>
     </div>)
 }
-
-export default BookItem
+const mapStateToProps=(state)=>{
+    return {bookCart: state.bookCart || []}
+  }
+//map((paragraph, index) => <p key={index} className='book-item-paragraph'> {paragraph} </p>
+export default connect(mapStateToProps)(BookItem)
