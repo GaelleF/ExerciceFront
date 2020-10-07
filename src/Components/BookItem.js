@@ -10,7 +10,7 @@ const BookItem = ({book, bookCart, dispatch}) => {
         const action = {type: 'TOGGLE_CART', value: book} 
         dispatch(action)
     }
-    
+
     return (
      <div className='book-item-container'>
          <img className='book-picture' src={book.cover} alt='couverture du livre'/>

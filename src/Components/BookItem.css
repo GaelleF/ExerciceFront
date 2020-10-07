@@ -25,6 +25,7 @@
 }
 
 .book-item-title {
+    color: black;
    text-align: left;
    margin: 10px;
    font-weight: bold;

@@ -17,7 +17,7 @@ const Cart = ({ bookCart, dispatch}) => {
     }, [bookCart])
     console.log('COM ', commercialOffers, bookCart)
     return (
-    <div className='cart-container'> 
+    <div className='cart-container'>
         <h2>Votre panier</h2>
         {
             bookCart.length > 0 ?
