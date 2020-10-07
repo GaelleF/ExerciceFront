@@ -11,3 +11,18 @@ try {
 }
  
 }
+
+export const getCommercialOffers = async (isbnArray) => {
+    try {
+        if (isbnArray.length > 0) {
+        const URL =  `${API_URL}/${isbnArray.join(',')}/commercialOffers`
+        const response = await fetch(URL)
+        const offers = await response.json()
+        return offers
+        }
+        return 'no commercial offer'
+    } catch(err) {
+        console.error('Error in getting commercial offers', err)
+    }
+     
+    }
