@@ -1,7 +1,13 @@
-export const bestCommercialOffer = ({cartBook, commercialOffer})=>{
-    const initialTotalPrice = cartBook.reduce((a,b)=>a.price+b.price)
+export const bestCommercialOffer = ({bookCart, commercialOffers})=>{
+
+    let initialTotalPrice = 0;
+    bookCart.forEach((book)=> {
+        if (book.price){
+            initialTotalPrice += book.price
+        }
+    })
     let bestOffer = {totalPrice: initialTotalPrice, offer:{type:'none'}}
-    commercialOffer.forEach(offer=>{
+    commercialOffers.forEach(offer=>{
         
         if (offer && offer.type === 'percentage' && offer.value) {
             const newPrice= Math.round(initialTotalPrice * (100-offer.value)/100)

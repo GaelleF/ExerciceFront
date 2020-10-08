@@ -7,7 +7,7 @@
 //     }
 // )
 import {bestCommercialOffer} from './utils/commercialOfferUtils'
-const cartBookMock =[
+const bookCartMock =[
     {
         isbn: "c8fabf68-8374-48fe-a7ea-a00ccd07afff",
         title: "Henri Potier à l'école des sorciers",
@@ -39,9 +39,9 @@ const offerMock = [
     }
   ]
 
-test('Should return a new price of 50 and a minus offer(15) with a initial price of 65', 
+test('Should return a new price of 50  with a initial price of 65 (choose minus offer)', 
    ()=> {
-        const bestOffer = bestCommercialOffer({cartBook: cartBookMock, commercialOffer: offerMock})
+        const bestOffer = bestCommercialOffer({bookCart: bookCartMock, commercialOffers: offerMock})
         console.log('bestOffer res ',bestOffer)
         expect(bestOffer.totalPrice).not.toBeUndefined()
         expect(bestOffer.totalPrice).toBe(50)
@@ -49,6 +49,97 @@ test('Should return a new price of 50 and a minus offer(15) with a initial price
         expect(bestOffer.offer).toEqual({
             type: "minus",
             value: 15
+          },)
+    }
+)
+
+test('Should return a new price of 50 with a minus offer(15) and a initial price of 65', 
+   ()=> {
+        const bestOffer = bestCommercialOffer({
+            bookCart: bookCartMock,
+             commercialOffers:[{
+                type: "minus",
+                value: 15
+             }]
+             })
+        console.log('bestOffer min res ',bestOffer)
+        expect(bestOffer.totalPrice).not.toBeUndefined()
+        expect(bestOffer.totalPrice).toBe(50)
+        expect(bestOffer.offer).not.toBeUndefined()
+        expect(bestOffer.offer).toEqual({
+            type: "minus",
+            value: 15
+          },)
+    }
+)
+
+test('Should return a new price of 62 with a percentage offer(5%) and a initial price of 65', 
+   ()=> {
+    const bestOffer = bestCommercialOffer({
+        bookCart: bookCartMock,
+         commercialOffers:[{ 
+            type: "percentage",
+            value: 5
+          },]
+         })
+        console.log('bestOffer per res ',bestOffer)
+        expect(bestOffer.totalPrice).not.toBeUndefined()
+        expect(bestOffer.totalPrice).toBe(62)
+        expect(bestOffer.offer).not.toBeUndefined()
+        expect(bestOffer.offer).toEqual({
+            type: "percentage",
+            value: 5
+          },)
+    }
+)
+
+test('Should return initial price of 65 with a slice offer(12 by 100) and a initial price of 65', 
+   ()=> {
+    const bestOffer = bestCommercialOffer({
+        bookCart: bookCartMock,
+         commercialOffers:[ {
+            type: "slice",
+            sliceValue: 100,
+            value: 12
+          },]
+         })
+        console.log('bestOffer slice res ',bestOffer)
+        expect(bestOffer.totalPrice).not.toBeUndefined()
+        expect(bestOffer.totalPrice).toBe(65)
+        expect(bestOffer.offer).not.toBeUndefined()
+        expect(bestOffer.offer).toEqual( {
+            type: "none",
+         
+          },)
+    }
+)
+
+test('Should return new price of 88 with a slice offer(12 by 100) and a initial price of 100', 
+   ()=> {
+    const bestOffer = bestCommercialOffer({
+        bookCart: [...bookCartMock, 
+            {
+                isbn: "bbcee412-be64-4a0c-bf1e-315977acd924",
+                title: "Henri Potier et les Reliques de la Mort",
+                price: 35,
+                cover: "http://henri-potier.xebia.fr/hp6.jpg",
+                synopsis: ['blabla', 'mumbo jumbo']
+            }
+        ],
+         commercialOffers:[ {
+            type: "slice",
+            sliceValue: 100,
+            value: 12
+          },]
+         })
+        console.log('bestOffer slice res ',bestOffer)
+        expect(bestOffer.totalPrice).not.toBeUndefined()
+        expect(bestOffer.totalPrice).toBe(88)
+        expect(bestOffer.offer).not.toBeUndefined()
+        expect(bestOffer.offer).toEqual( {
+            type: "slice",
+            sliceValue: 100,
+            value: 12
           },)
     }
 )
