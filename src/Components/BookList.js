@@ -7,6 +7,7 @@ import './BookList.css'
 const BookList= ()=> {
 
     const [books, setBooks] = useState([])
+    const [searchText, setSearchText] = useState('')
 
     useEffect(()=> {
         getAllBooks()
@@ -14,14 +15,16 @@ const BookList= ()=> {
     }, [])
 
     return (
+        <div>
+        <input type='text' value={searchText} onChange={(event)=> setSearchText(event.target.value)} placeholder='Rechercher'/> 
         <div className='book-list-container'>
+            
             {books && books.length > 0 ? 
-            books.map((book)=> <BookItem key={book.isbn} book={book}/>):
+            books.filter(book=> book.title && book.title.toLowerCase().includes(searchText.toLowerCase()))
+                .map((book) => <BookItem key={book.isbn} book={book}/>):
             'no book'}
         </div>
+        </div>
     )
-
-
-
 }
 export default BookList
