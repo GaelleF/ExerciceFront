@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <Header />
       <Router>
-        <BookList path='bookList' />
+        <BookList path='/' />
         <Cart path='cart' />
       </Router>   
     </div>
