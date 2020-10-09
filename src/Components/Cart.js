@@ -28,15 +28,21 @@ const Cart = ({ bookCart, dispatch}) => {
 
     const displayCart= ()=> {
        return <div className='cart-detail'> 
-           <div> TOTAL panier : {bestOffer && bestOffer.totalPrice } € au lieu de {bestOffer && bestOffer.initialTotalPrice } € </div>
-           <div className='cart-resume'> 
-           <h4> Récapitulatif </h4>
+     
+           <div className= 'cart-total'> 
+               <span className='cart-total-cart'>TOTAL panier : </span> 
+               <span className='cart-price-offer'>{bestOffer && bestOffer.totalPrice }  € </span> 
+                 au lieu de {bestOffer && bestOffer.initialTotalPrice } € 
+            </div>
+           <div className='cart-resume'>
+              <img className='cart-picture-wizard' src='./wizard-1417195_640.png' alt='sorcier illustration'/>   
+          <div className= 'cart-recap'>
+              <h4> Récapitulatif </h4>
         {bookCart.map((book)=> <CartItem key={book.isbn} book={book} dispatch={dispatch} bookCart={bookCart}/>)}
-        </div>
+      </div>   </div>
        </div> 
 
     }
-    console.log('COM ', commercialOffers, bookCart, bestOffer)
     return (
     <div className='cart-container'>
         <h1 className='cart-title'>Votre panier</h1>

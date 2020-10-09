@@ -42,7 +42,6 @@ const offerMock = [
 test('Should return a new price of 50  with a initial price of 65 (choose minus offer)', 
    ()=> {
         const bestOffer = bestCommercialOffer({bookCart: bookCartMock, commercialOffers: offerMock})
-        console.log('bestOffer res ',bestOffer)
         expect(bestOffer.totalPrice).not.toBeUndefined()
         expect(bestOffer.totalPrice).toBe(50)
         expect(bestOffer.offer).not.toBeUndefined()
@@ -62,7 +61,6 @@ test('Should return a new price of 50 with a minus offer(15) and a initial price
                 value: 15
              }]
              })
-        console.log('bestOffer min res ',bestOffer)
         expect(bestOffer.totalPrice).not.toBeUndefined()
         expect(bestOffer.totalPrice).toBe(50)
         expect(bestOffer.offer).not.toBeUndefined()
@@ -82,7 +80,6 @@ test('Should return a new price of 62 with a percentage offer(5%) and a initial 
             value: 5
           },]
          })
-        console.log('bestOffer per res ',bestOffer)
         expect(bestOffer.totalPrice).not.toBeUndefined()
         expect(bestOffer.totalPrice).toBe(62)
         expect(bestOffer.offer).not.toBeUndefined()
@@ -103,7 +100,6 @@ test('Should return initial price of 65 with a slice offer(12 by 100) and a init
             value: 12
           },]
          })
-        console.log('bestOffer slice res ',bestOffer)
         expect(bestOffer.totalPrice).not.toBeUndefined()
         expect(bestOffer.totalPrice).toBe(65)
         expect(bestOffer.offer).not.toBeUndefined()
@@ -132,7 +128,6 @@ test('Should return new price of 88 with a slice offer(12 by 100) and a initial 
             value: 12
           },]
          })
-        console.log('bestOffer slice res ',bestOffer)
         expect(bestOffer.totalPrice).not.toBeUndefined()
         expect(bestOffer.totalPrice).toBe(88)
         expect(bestOffer.offer).not.toBeUndefined()
