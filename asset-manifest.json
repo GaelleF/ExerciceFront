@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/exercice-front/static/css/main.80a62c0c.chunk.css",
+    "main.js": "/exercice-front/static/js/main.861fa36e.chunk.js",
+    "main.js.map": "/exercice-front/static/js/main.861fa36e.chunk.js.map",
+    "runtime-main.js": "/exercice-front/static/js/runtime-main.6a9b72de.js",
+    "runtime-main.js.map": "/exercice-front/static/js/runtime-main.6a9b72de.js.map",
+    "static/js/2.c2289af7.chunk.js": "/exercice-front/static/js/2.c2289af7.chunk.js",
+    "static/js/2.c2289af7.chunk.js.map": "/exercice-front/static/js/2.c2289af7.chunk.js.map",
+    "index.html": "/exercice-front/index.html",
+    "precache-manifest.29029a38ca174128cdcb1d4298a578bd.js": "/exercice-front/precache-manifest.29029a38ca174128cdcb1d4298a578bd.js",
+    "service-worker.js": "/exercice-front/service-worker.js",
+    "static/css/main.80a62c0c.chunk.css.map": "/exercice-front/static/css/main.80a62c0c.chunk.css.map",
+    "static/js/2.c2289af7.chunk.js.LICENSE.txt": "/exercice-front/static/js/2.c2289af7.chunk.js.LICENSE.txt",
+    "static/media/Header.css": "/exercice-front/static/media/WizardsMagic.0454ff82.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6a9b72de.js",
+    "static/js/2.c2289af7.chunk.js",
+    "static/css/main.80a62c0c.chunk.css",
+    "static/js/main.861fa36e.chunk.js"
+  ]
+}
