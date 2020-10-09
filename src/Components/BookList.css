@@ -9,3 +9,11 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
+
+.book-list-search {
+    margin: 15px;
+    border-radius: 2px;
+    border: none;
+    padding: 10px;
+    font-size: 1.1em;
+}

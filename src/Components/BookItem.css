@@ -8,11 +8,10 @@
 
 .book-picture {
     width: 200px;
-    margin: auto;
+    margin-right:15px;
 }
 
 .book-item-synopsis {
-    max-width: 450px;
     padding: 5px;
     text-align: left;
     text-overflow: ellipsis;
@@ -33,4 +32,18 @@
    padding-right: 5px;
    font-family:'Roboto';
 
+}
+
+.book-item-price {
+    margin: 5px;
+    font-family:'Roboto';
+    font-size: 1.1em;
+}
+
+.button-cart {
+    padding: 5px;
+    border: 1px gray solid;
+    border-radius: 5px;
+    background-color: gainsboro;
+    margin-bottom: 5px;
 }

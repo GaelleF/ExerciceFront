@@ -18,8 +18,8 @@ const BookItem = ({book, bookCart, dispatch}) => {
              <div className='book-item-title'> {book.title}</div>
              <div className='book-item-synopsis'> {`${book.synopsis.join('\n')}`} 
             </div>
-            <div>{`${book.price} €`}</div>
-            <button onClick={()=> toggleBookCart()}>
+            <div className='book-item-price'>{`Prix : ${book.price} €`}</div>
+            <button className='button-cart' onClick={()=> toggleBookCart()}>
                 {bookCart.findIndex(item=>item.isbn === book.isbn) === -1 ?
                  'Ajouter au panier': 
                  'Retirer du panier'}

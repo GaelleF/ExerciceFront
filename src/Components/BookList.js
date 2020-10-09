@@ -16,7 +16,13 @@ const BookList= ()=> {
 
     return (
         <div>
-        <input type='text' value={searchText} onChange={(event)=> setSearchText(event.target.value)} placeholder='Rechercher'/> 
+        <input 
+            type='text'
+            value={searchText} 
+            onChange={(event)=> setSearchText(event.target.value)} 
+            placeholder='Rechercher'
+            className='book-list-search'
+        /> 
         <div className='book-list-container'>
             
             {books && books.length > 0 ? 

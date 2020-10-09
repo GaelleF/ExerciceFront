@@ -1,3 +1,14 @@
 .cart-container {
-    color: white;
+    color: black;
+    background-color: snow;
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+}
+.cart_detail {
+
+}
+
+.cart-resume {
+    
 }

@@ -27,19 +27,19 @@ const Cart = ({ bookCart, dispatch}) => {
     },[commercialOffers, bookCart])
 
     const displayCart= ()=> {
-       return <div> 
+       return <div className='cart-detail'> 
            <div> TOTAL panier : {bestOffer && bestOffer.totalPrice } € au lieu de {bestOffer && bestOffer.initialTotalPrice } € </div>
-
+           <div className='cart-resume'> 
            <h4> Récapitulatif </h4>
         {bookCart.map((book)=> <CartItem key={book.isbn} book={book} dispatch={dispatch} bookCart={bookCart}/>)}
-
+        </div>
        </div> 
 
     }
     console.log('COM ', commercialOffers, bookCart, bestOffer)
     return (
     <div className='cart-container'>
-        <h2>Votre panier</h2>
+        <h1 className='cart-title'>Votre panier</h1>
         {
             bookCart.length > 0 ?
             displayCart():
