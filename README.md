@@ -17,7 +17,7 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.<br />
 
 
-### `npm run cypress:gui` and `npm start``
+### `npm run cypress:gui` and `npm start`
 
-Launches cypress end-t-end tests
+Launches cypress end-to-end tests
 
