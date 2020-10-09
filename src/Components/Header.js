@@ -11,7 +11,7 @@ const Header = ({bookCart}) => {
         <nav>
         <Link className='header-link' to="/"> Liste des livres</Link>
         <Link className='header-link' to="cart"> 
-        <span>
+        <span data-cy='header-cart'>
             {bookCart && bookCart.length > 0 ?`Panier (${bookCart.length})`: 'Panier'}
             </span></Link>
         </nav>

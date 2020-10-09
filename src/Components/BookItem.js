@@ -12,14 +12,14 @@ const BookItem = ({book, bookCart, dispatch}) => {
     }
 
     return (
-     <div className='book-item-container'>
+     <div className='book-item-container' data-cy={`book-item-${book.isbn}`}>
          <img className='book-picture' src={book.cover} alt='couverture du livre'/>
          <div> 
              <div className='book-item-title'> {book.title}</div>
              <div className='book-item-synopsis'> {`${book.synopsis.join('\n')}`} 
             </div>
             <div className='book-item-price'>{`Prix : ${book.price} €`}</div>
-            <button className='button-cart' onClick={()=> toggleBookCart()}>
+            <button className='button-cart' onClick={()=> toggleBookCart()} data-cy={`button-cart-${book.isbn}`}>
                 {bookCart.findIndex(item=>item.isbn === book.isbn) === -1 ?
                  'Ajouter au panier': 
                  'Retirer du panier'}
