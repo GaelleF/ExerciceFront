@@ -1,6 +1,5 @@
 // / <reference types="cypress" />
-before(() => {
-  });
+
   describe('book list page', () => {
     it('should filter the list of book', () => {
         cy.visit('http://localhost:3000/');

@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import { connect } from 'react-redux'
-import BookItem from './BookItem'
 import './Cart.css'
 import {getCommercialOffers} from '../API/bookApi'
 import {bestCommercialOffer} from '../utils/commercialOfferUtils'
@@ -51,7 +50,6 @@ const Cart = ({ bookCart, dispatch}) => {
             displayCart():
             'Aucun livre dans le panier'
         }
-{}
     </div>
     )
 }
