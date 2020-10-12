@@ -19,7 +19,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress:gui": "npx cypress open"
-
   },
   "eslintConfig": {
     "extends": "react-app"
